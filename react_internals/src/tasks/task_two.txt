@@ -1,0 +1,21 @@
+Task 2: Suspense with Lazy Loading
+
+Goal: Practice using Suspense and lazy loading for heavy components.
+
+Instructions:
+
+Create a heavy component (ChartComponent) that simulates being “big” by adding some fake delay (e.g., setTimeout).
+
+Use React.lazy to load this component only when needed.
+
+Wrap it with Suspense and display a "Loading chart..." fallback.
+
+Add a button "Show Chart" to render it only when clicked.
+
+Example:
+
+const ChartComponent = React.lazy(() => import("./ChartComponent"));
+
+<Suspense fallback={<p>Loading chart...</p>}>
+  {showChart && <ChartComponent />}
+</Suspense>
