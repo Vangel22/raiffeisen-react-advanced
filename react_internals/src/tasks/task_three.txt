@@ -1,0 +1,15 @@
+Task 3: Data Fetching with Suspense
+
+Goal: Combine data fetching with Suspense for a smooth user experience.
+
+Instructions:
+
+Create a fetchUsers() function that fetches data from an API like https://jsonplaceholder.typicode.com/users.
+
+Wrap this in a simple “resource” object (like in React docs) so it suspends while loading.
+
+Create a UserList component that renders the users.
+
+Wrap UserList with Suspense and show "Loading users..." while fetching.
+
+Handle an error boundary for failed requests.

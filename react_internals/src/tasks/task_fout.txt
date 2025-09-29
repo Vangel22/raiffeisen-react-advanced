@@ -1,0 +1,13 @@
+Task 4: Bonus – Heavy Data Component + Transition + Suspense
+
+Goal: Combine everything.
+
+Instructions:
+
+Create a "ProductSearch" component that fetches 1,000 products (you can mock this).
+
+Add a search bar that filters products using useTransition.
+
+Lazy load a "ProductDetails" component when a product is clicked.
+
+Wrap it all in Suspense with a fallback loader.
