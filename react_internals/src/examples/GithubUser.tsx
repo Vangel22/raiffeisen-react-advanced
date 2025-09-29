@@ -14,11 +14,17 @@ interface UserInterface {
 class UserResource implements UserInterface {
   cache = new Map<string, User>();
   promise = new Map<string, Promise<User>>();
+  errorCache = new Map<string, Error>(); // Cache errors to prevent re-fetching
 
   fetchUser(username: string) {
     // Gets the user from the cache
     if (this.cache.has(username)) {
       return this.cache.get(username)!;
+    }
+
+    // Check if we have a cached error for this username
+    if (this.errorCache.has(username)) {
+      throw this.errorCache.get(username)!;
     }
 
     // Returns the promise if it exists
@@ -41,12 +47,19 @@ class UserResource implements UserInterface {
         return user;
       })
       .catch((err) => {
+        // Cache the error to prevent re-fetching
+        this.errorCache.set(username, err);
         this.promise.delete(username);
         throw err;
       });
-
+    console.log(this.promise);
     this.promise.set(username, promise);
     return promise;
+  }
+
+  // Method to clear error cache for retry functionality
+  clearError(username: string) {
+    this.errorCache.delete(username);
   }
 }
 
@@ -80,12 +93,14 @@ const UserProfile = ({ username }: UserProfileProps) => {
 };
 
 export default function GithubUser() {
-  const [username, setUsername] = useState("gaeron");
-  const [input, setInput] = useState("gaeron");
+  const [username, setUsername] = useState("hehe-react");
+  const [input, setInput] = useState("hehe-react");
   const [isPending, startTransition] = useTransition();
 
   const handleSearch = () => {
     startTransition(() => {
+      // Clear any cached errors for the new username
+      userResource.clearError(input);
       setUsername(input);
     });
   };
