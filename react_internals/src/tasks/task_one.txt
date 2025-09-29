@@ -1,0 +1,15 @@
+Task 1: Understanding useTransition
+
+Goal: Practice using useTransition for smoother UI updates.
+
+Instructions:
+
+Create a component with an input box and a list of 5,000 names (you can generate them with a loop).
+
+Filter the list based on the input text.
+
+Without useTransition, the input should feel laggy.
+
+Wrap the filtering logic with startTransition or useTransition to make typing smoother.
+
+Show a small "Updating..." message while the transition is pending.
