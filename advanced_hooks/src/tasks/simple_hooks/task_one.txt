@@ -1,0 +1,176 @@
+# Task One: Todo List - useState, useReducer, and useEffect
+
+## Overview
+Build a simple todo list that progressively demonstrates `useState`, `useReducer`, and `useEffect` hooks in a 30-minute exercise.
+
+## Learning Objectives
+- Start with simple state using `useState`
+- Progress to complex state with `useReducer`
+- Add side effects with `useEffect`
+- Understand when to use each hook
+
+## Task Requirements (30 minutes total)
+
+### Step 1: Basic useState (10 minutes)
+Create `TodoListBasic.tsx` with:
+- `useState` for a simple todo list array
+- `useState` for input text
+- Add todo functionality
+- Display todos
+
+```tsx
+// Simple state - perfect for useState
+const [todos, setTodos] = useState<string[]>([]);
+const [inputText, setInputText] = useState('');
+```
+
+### Step 2: Complex useReducer (10 minutes)
+Create `TodoListAdvanced.tsx` with:
+- `useReducer` for complex todo state (id, text, completed)
+- Actions: ADD_TODO, TOGGLE_TODO, DELETE_TODO, CLEAR_COMPLETED
+- More complex state logic
+
+```tsx
+// Complex state - better with useReducer
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+```
+
+### Step 3: Add useEffect (10 minutes)
+Enhance `TodoListAdvanced.tsx` with:
+- `useEffect` to save todos to localStorage
+- `useEffect` to load todos on mount
+- `useEffect` to update document title with todo count
+- Cleanup functions - clear the localStorage on unmounting
+
+## Starter Code
+
+### Step 1: useState Starter (10 min)
+```tsx
+import { useState } from 'react';
+
+function TodoListBasic() {
+  // TODO: Add useState for todos array and input text
+  // const [todos, setTodos] = useState<???>([]);
+  // const [inputText, setInputText] = useState<???>('');
+
+  // TODO: Implement addTodo function
+  const addTodo = () => {
+    // Add logic here
+  };
+
+  return (
+    <div>
+      <input 
+        // TODO: Add value and onChange props
+        placeholder="Enter todo..."
+      />
+      <button onClick={addTodo}>Add Todo</button>
+      <ul>
+        {/* TODO: Map over todos and display them */}
+      </ul>
+    </div>
+  );
+}
+
+export default TodoListBasic;
+```
+
+### Step 2: useReducer Starter (10 min)
+```tsx
+import { useReducer } from 'react';
+
+// TODO: Define Todo interface
+// interface Todo {
+//   id: number;
+//   text: string;
+//   completed: boolean;
+// }
+
+// TODO: Define Action type
+// type Action = 
+//   | { type: 'ADD_TODO'; payload: string }
+//   | { type: 'TOGGLE_TODO'; payload: number }
+//   | { type: 'DELETE_TODO'; payload: number };
+
+// TODO: Implement todoReducer function
+// function todoReducer(state: Todo[], action: Action): Todo[] {
+//   switch (action.type) {
+//     // Add cases here
+//   }
+// }
+
+function TodoListAdvanced() {
+  // TODO: Use useReducer instead of useState
+  // const [todos, dispatch] = useReducer(todoReducer, []);
+
+  return (
+    <div>
+      <input placeholder="Enter todo..." />
+      <button>Add Todo</button>
+      <button>Toggle</button>
+      <button>Delete</button>
+      <ul>
+        {/* TODO: Display todos with toggle and delete functionality */}
+      </ul>
+    </div>
+  );
+}
+
+export default TodoListAdvanced;
+```
+
+### Step 3: useEffect Starter (10 min)
+```tsx
+import { useReducer, useEffect } from 'react';
+
+// ... (use previous Todo interface and reducer)
+
+function TodoListAdvanced() {
+  const [todos, dispatch] = useReducer(todoReducer, []);
+
+  // TODO: Add useEffect to save todos to localStorage
+  // useEffect(() => {
+  //   // Save logic here
+  // }, [todos]);
+
+  // TODO: Add useEffect to load todos from localStorage on mount
+  // useEffect(() => {
+  //   // Load logic here
+  // }, []);
+
+  // TODO: Add useEffect to update document title
+  // useEffect(() => {
+  //   // Title update logic here
+  //   return () => {
+  //     // Cleanup logic here
+  //   };
+  // }, [todos.length]);
+
+  return (
+    <div>
+      {/* ... existing JSX ... */}
+    </div>
+  );
+}
+```
+
+## Key Learning Points
+- **useState**: Simple, direct state updates
+- **useReducer**: Complex state logic with actions
+- **useEffect**: Side effects and cleanup
+- **Progressive complexity**: Start simple, add complexity
+
+## Deliverables
+1. `TodoListBasic.tsx` - useState version
+2. `TodoListAdvanced.tsx` - useReducer + useEffect version
+3. Brief explanation of when to use each hook
+
+## Time Estimate
+30 minutes
+
+## Difficulty Level
+Beginner to Intermediate

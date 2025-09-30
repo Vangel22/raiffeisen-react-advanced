@@ -1,0 +1,32 @@
+TASK 2: useCopyToClipboard Hook
+
+Objective:
+Create a custom hook called `useCopyToClipboard` that allows users to copy text to the clipboard easily. This hook should also provide a way to track whether the copy action was successful.
+
+Instructions:
+
+1. Create the custom hook `useCopyToClipboard`.
+   - The hook should return an array or object containing:
+     a) A boolean `copied` that indicates if the text was successfully copied.
+     b) A function `copy` that takes a string as an argument and copies it to the clipboard.
+
+2. Implement a component to test your hook:
+   - Display a text or input field with some text (e.g., "Hello World").
+   - Add a "Copy Text" button that uses the `copy` function from your hook.
+   - Show a message like "Copied!" when the text has been successfully copied.
+
+3. Requirements:
+   - Use the modern Clipboard API (`navigator.clipboard.writeText`) to perform the copy.
+   - Reset the `copied` state after a short delay (e.g., 2 seconds) to allow the message to disappear.
+   - Ensure your hook can be reused in different components.
+
+Example Usage:
+
+const [copied, copy] = useCopyToClipboard();
+
+<button onClick={() => copy("Some text")}>Copy Text</button>
+{copied && <span>Copied!</span>}
+
+Deliverable:
+- Custom hook `useCopyToClipboard.js`
+- Test component `CopyExample.js` demonstrating the hook

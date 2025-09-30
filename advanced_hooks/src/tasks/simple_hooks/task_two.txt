@@ -1,0 +1,232 @@
+# Task Two: Performance Optimization - useMemo, useCallback, and React.memo
+
+## Overview
+
+Build a shopping cart with product filtering that demonstrates performance optimization using `useMemo`, `useCallback`, and `React.memo` hooks in a 30-minute exercise.
+
+## Learning Objectives
+
+* Understand when and how to use `useMemo` for expensive computations
+* Learn `useCallback` for stable function references
+* Practice `React.memo` for preventing unnecessary re-renders
+* Optimize React component performance
+
+## Task Requirements (30 minutes total)
+
+### Step 1: Basic Shopping Cart (10 minutes)
+
+Create `ShoppingCartBasic.tsx` with:
+
+* `useState` for products array and filter text
+* Basic product filtering functionality
+* Display filtered products
+* Add/remove items from cart
+
+```tsx
+// Basic state - no optimization yet
+const [products, setProducts] = useState<Product[]>([]);
+const [filter, setFilter] = useState('');
+const [cart, setCart] = useState<CartItem[]>([]);
+```
+
+### Step 2: Add useMemo Optimization (10 minutes)
+
+Enhance `ShoppingCartBasic.tsx` with:
+
+* `useMemo` for expensive filtering computation
+* `useMemo` for cart total calculation
+* Prevent unnecessary recalculations
+
+```tsx
+// Expensive computation - perfect for useMemo
+const filteredProducts = useMemo(() => {
+  // TODO: implement filtering logic
+}, [products, filter]);
+```
+
+### Step 3: Add useCallback and React.memo (10 minutes)
+
+Create `ShoppingCartOptimized.tsx` with:
+
+* `useCallback` for stable function references
+* `React.memo` for child components
+* Prevent unnecessary re-renders
+
+```tsx
+// Memoized callbacks - stable references
+const addToCart = useCallback((product: Product) => {
+  // TODO: implement add to cart
+}, [cart]);
+
+const removeFromCart = useCallback((productId: number) => {
+  // TODO: implement remove from cart
+}, [cart]);
+```
+
+---
+
+## Starter Code
+
+### Step 1: Basic Shopping Cart Starter (10 min)
+
+```tsx
+import { useState } from 'react';
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  category: string;
+}
+
+interface CartItem {
+  product: Product;
+  quantity: number;
+}
+
+function ShoppingCartBasic() {
+  // TODO: Add useState for products, filter, and cart
+
+  // TODO: Implement filtering logic (expensive computation)
+
+  // TODO: Implement cart total calculation
+
+  // TODO: Implement add to cart function
+
+  // TODO: Implement remove from cart function
+
+  return (
+    <div>
+      <h2>Shopping Cart</h2>
+      
+      {/* Filter input */}
+      <input 
+        // TODO: Add value and onChange props
+        placeholder="Filter products..."
+      />
+      
+      {/* Products list */}
+      <div>
+        <h3>Products</h3>
+        {/* TODO: Map over filtered products and display them */}
+      </div>
+      
+      {/* Cart */}
+      <div>
+        <h3>Cart</h3>
+        <p>Total: ${/* TODO: Display cart total */}</p>
+        {/* TODO: Display cart items */}
+      </div>
+    </div>
+  );
+}
+
+export default ShoppingCartBasic;
+```
+
+---
+
+### Step 2: useMemo Optimization Starter (10 min)
+
+```tsx
+import { useState, useMemo } from 'react';
+
+// ... (use previous interfaces)
+
+function ShoppingCartBasic() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filter, setFilter] = useState('');
+  const [cart, setCart] = useState<CartItem[]>([]);
+
+  // TODO: Use useMemo for expensive filtering computation
+
+  // TODO: Use useMemo for cart total calculation
+
+  // TODO: Implement add to cart function
+
+  // TODO: Implement remove from cart function
+
+  return (
+    <div>
+      <h2>Shopping Cart</h2>
+      
+      <input 
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+        placeholder="Filter products..."
+      />
+      
+      <div>
+        <h3>Products</h3>
+        {/* TODO: Use filteredProducts */}
+      </div>
+      
+      <div>
+        <h3>Cart</h3>
+        <p>Total: ${/* TODO: Use cartTotal */}</p>
+        {/* TODO: Display cart items */}
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+### Step 3: useCallback and React.memo Starter (10 min)
+
+```tsx
+import { useState, useMemo, useCallback, memo } from 'react';
+
+// ... (use previous interfaces)
+
+// TODO: Create memoized ProductCard component
+
+// TODO: Create memoized CartItem component
+
+function ShoppingCartOptimized() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filter, setFilter] = useState('');
+  const [cart, setCart] = useState<CartItem[]>([]);
+
+  // TODO: Use useMemo for filtered products
+
+  // TODO: Use useMemo for cart total
+
+  // TODO: Use useCallback for stable function references
+
+  return (
+    <div>
+      <h2>Shopping Cart (Optimized)</h2>
+      
+      <input 
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+        placeholder="Filter products..."
+      />
+      
+      <div>
+        <h3>Products</h3>
+        {/* TODO: Use ProductCard components */}
+      </div>
+      
+      <div>
+        <h3>Cart</h3>
+        <p>Total: ${/* TODO: Display cart total */}</p>
+        {/* TODO: Use CartItemComponent components */}
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+## Key Learning Points
+
+* **useMemo**: Cache expensive computations, only recalc when dependencies change
+* **useCallback**: Create stable function references, prevent child re-renders
+* **React.memo**: Prevent unnecessary component re-renders
+* **Performance**: Measure and optimize React component performance
+
+---

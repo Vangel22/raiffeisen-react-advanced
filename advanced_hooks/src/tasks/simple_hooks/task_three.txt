@@ -1,0 +1,80 @@
+# Task Three: useRef and forwardRef - DOM Manipulation and Component Communication
+
+## Overview
+
+Build a searchable product catalog that demonstrates `useRef` and `forwardRef` hooks for DOM manipulation and component communication in a 30-minute exercise.
+
+## Learning Objectives
+
+* Understand when and how to use `useRef` for DOM manipulation
+* Learn `forwardRef` for exposing component methods to parent components
+* Practice `useImperativeHandle` for controlled component APIs
+* Master ref patterns for form handling and scrolling
+
+## Task Requirements (30 minutes total)
+
+### Step 1: Basic useRef Implementation (10 minutes)
+
+Create `ProductCatalogBasic.tsx` with:
+
+* `useRef` for search input focus
+* `useRef` for scroll container
+* `useRef` for tracking previous search term
+* Basic search functionality
+
+```tsx
+// Basic refs - DOM manipulation
+const searchInputRef = useRef<HTMLInputElement>(null);
+const scrollContainerRef = useRef<HTMLDivElement>(null);
+const prevSearchRef = useRef<string>('');
+```
+
+### Step 2: Add forwardRef (10 minutes)
+
+Enhance `ProductCatalogBasic.tsx` with:
+
+* `forwardRef` to expose scroll methods to parent
+* `useImperativeHandle` for controlled API
+* Parent component can control child behavior
+* **Focus on smooth scroll to top functionality instead of input focusing**
+
+### Step 3: Advanced Ref Patterns (10 minutes)
+
+Create `ProductCatalogAdvanced.tsx` with:
+
+* Multiple refs for different purposes
+* **Smooth scroll to top functionality as the primary useImperativeHandle method**
+* Scroll to specific products
+* Previous value tracking
+* **Replace input focus with smooth scroll behavior in the exposed API**
+
+---
+
+## Key Learning Points
+
+* **useRef**: Access DOM elements, store mutable values, track previous values
+* **forwardRef**: Expose component methods to parent components
+* **useImperativeHandle**: Create controlled APIs for smooth scroll functionality
+* **Ref Patterns**: Multiple refs for different purposes, ref forwarding, imperative APIs
+* **Smooth Scrolling**: Implement smooth scroll behavior using refs and imperative handles
+
+---
+
+## Deliverables
+
+1. `ProductCatalogBasic.tsx` - Basic useRef implementation with scroll functionality
+2. `ProductCatalogAdvanced.tsx` - forwardRef with useImperativeHandle for smooth scrolling
+3. `ProductCatalogParent.tsx` - Parent component controlling smooth scroll behavior
+4. Brief explanation of ref patterns and smooth scroll implementation
+
+---
+
+## Time Estimate
+
+30 minutes
+
+---
+
+## Difficulty Level
+
+Intermediate

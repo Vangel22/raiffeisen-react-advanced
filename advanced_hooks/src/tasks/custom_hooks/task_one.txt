@@ -1,0 +1,41 @@
+TASK 1: useLocalStorage Hook – Shopping Cart
+
+Goal:
+Learn how to create a reusable custom hook to persist state in localStorage.
+
+Instructions:
+
+1. Create a custom hook named useLocalStorage(key, initialValue) that:
+   - Saves the provided value to localStorage under the specified key.
+   - Retrieves and returns the value from localStorage when the component mounts.
+   - Keeps the state in sync with localStorage whenever it changes.
+
+2. Use the hook in a Shopping Cart component:
+   - Allow adding items to the cart (e.g., product names).
+   - Store the cart items in localStorage.
+   - Ensure that when the page reloads, the cart items remain available.
+
+3. Requirements:
+   - The hook should be reusable for other components and state values.
+   - Demonstrate adding multiple items and persisting them across page reloads.
+
+Example Usage:
+
+const [cart, setCart] = useLocalStorage("cart", []);
+
+const addItem = item => setCart([...cart, item]);
+
+return (
+  <div>
+    <button onClick={() => addItem("Apple")}>Add Apple</button>
+    <ul>
+      {cart.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+Deliverables:
+- Custom hook file: useLocalStorage.js
+- Shopping Cart component file: Cart.js demonstrating the hook
