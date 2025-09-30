@@ -63,6 +63,7 @@ export default function ExampleTwo() {
       .then((response) => response.json())
       .then((data) => {
         if (mounted) {
+          // localStorage.setItem("users", JSON.stringify(data));
           dispatch({ type: "SET_DATA", payload: data });
         }
       })
@@ -72,6 +73,9 @@ export default function ExampleTwo() {
       console.log("Data effect: Cleaning up");
       mounted = false;
       //   setData(null);
+      //   localStorage.removeItem("users");
+      // or
+      // localStorage.clear();
     };
   }, []);
 
