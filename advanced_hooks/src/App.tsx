@@ -8,6 +8,7 @@ import ExampleFour from "./examples/ExampleFour";
 import ExampleFive from "./examples/ExampleFive";
 import ExampleSix, { type ExampleSixHandle } from "./examples/ExampleSix";
 import ExampleOne from "./examples/ExampleOne";
+import AppOne from "./AppOne";
 
 function App() {
   const [showComponent, setShowComponent] = useState(true);
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <button onClick={() => setShowComponent(!showComponent)}>
+      {/* <button onClick={() => setShowComponent(!showComponent)}>
         {showComponent ? "Hide Component" : "Show Component"}
       </button>
       {showComponent && (
@@ -51,7 +52,9 @@ function App() {
           <button onClick={handleScrollToTop}>Scroll To Top</button>
           <ExampleFive ref={containerRef} />
         </>
-      )}
+      )} */}
+
+      <AppOne />
 
       {showComponent && (
         <>
