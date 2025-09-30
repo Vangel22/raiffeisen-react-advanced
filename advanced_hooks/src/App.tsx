@@ -7,11 +7,18 @@ import ExampleThree from "./examples/ExampleThree";
 import ExampleFour from "./examples/ExampleFour";
 import ExampleFive from "./examples/ExampleFive";
 import ExampleSix, { type ExampleSixHandle } from "./examples/ExampleSix";
+import ExampleOne from "./examples/ExampleOne";
 
 function App() {
-  const [show, setShow] = useState(true);
-
   const [showComponent, setShowComponent] = useState(true);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Trigger scroll from parent
+  const handleScrollToTop = () => {
+    containerRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const exampleSevenRef = useRef<ExampleSixHandle>(null);
 
   return (
@@ -19,6 +26,32 @@ function App() {
       <button onClick={() => setShowComponent(!showComponent)}>
         {showComponent ? "Hide Component" : "Show Component"}
       </button>
+      {showComponent && (
+        <>
+          <ExampleOne />
+        </>
+      )}
+      {showComponent && (
+        <>
+          <ExampleTwo />
+        </>
+      )}
+      {showComponent && (
+        <>
+          <ExampleThree />
+        </>
+      )}
+      {showComponent && (
+        <>
+          <ExampleFour />
+        </>
+      )}
+      {showComponent && (
+        <>
+          <button onClick={handleScrollToTop}>Scroll To Top</button>
+          <ExampleFive ref={containerRef} />
+        </>
+      )}
 
       {showComponent && (
         <>
