@@ -1,0 +1,2 @@
+1. Add addiotional props and display them for ExampleOne (check withAuth)
+2. Set timeout to display the loading state of ExampleTwo (Add timer in App.tsx or inside ExampleTwo)
