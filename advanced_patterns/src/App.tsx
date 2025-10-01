@@ -21,7 +21,7 @@ function App() {
       {/* <MouseTrackerExample /> */}
 
       {/* Compound Component Example */}
-      <AccordionExample />
+      {/* <AccordionExample /> */}
     </>
   );
 }
