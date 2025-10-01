@@ -1,0 +1,51 @@
+Create a WindowSizeTracker component that tracks the browser window size and exposes it via a render prop.
+
+WindowSizeTracker is the parent component.
+
+Choose to render the size using a render prop or children as a function.
+
+You should use useState and useEffect to track window resize events.
+
+```tsx
+import { useState, useEffect, type ReactNode } from "react";
+
+interface WindowSize {
+  width: number;
+  height: number;
+}
+
+interface WindowSizeTrackerProps {
+  render?: (size: WindowSize) => ReactNode;
+  children?: (size: WindowSize) => ReactNode;
+}
+
+export function WindowSizeTracker({ render, children }: WindowSizeTrackerProps) {
+  // TODO: Create state to store width and height
+  // TODO: Use useEffect to listen for window resize and update state
+  return null; // TODO: Call render or children with the window size
+}
+
+```
+
+Usage:
+
+1. Render prop - direct
+```tsx
+      <WindowSizeTracker
+        render={({ width, height }) => (
+          <p>
+            Window size (render prop): {width} x {height}
+          </p>
+        )}
+      />
+```
+2. Render prop - using children
+```tsx
+      <WindowSizeTracker>
+        {({ width, height }) => (
+          <div style={{ border: "1px solid black", padding: "10px" }}>
+            Window size (children): {width} x {height}
+          </div>
+        )}
+      </WindowSizeTracker>
+```

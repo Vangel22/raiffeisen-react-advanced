@@ -1,0 +1,48 @@
+Create a FAQ component where each FAQItem can be expanded or collapsed to show an answer.
+
+FAQ is the parent wrapper.
+
+FAQItem is a child that shows a question and toggles the answer when clicked.
+
+The answer is passed as nested children.
+
+Starter code:
+
+```tsx
+import { useState, type ReactNode } from "react";
+
+interface FAQProps {
+  children: ReactNode;
+}
+
+interface FAQItemProps {
+  question: string;
+  children: ReactNode;
+}
+export function FAQ({ children }: FAQProps) {
+    // TODO
+}
+
+export function FAQItem({ question, children }: FAQItemProps) {
+    // TODO
+}
+
+```
+
+Usage:
+
+```tsx
+<FAQ>
+  <FAQItem question="What is React?">
+    React is a JavaScript library for building user interfaces.
+  </FAQItem>
+
+  <FAQItem question="What is a Compound Component?">
+    Multiple components that work together to build a single feature.
+  </FAQItem>
+
+  <FAQItem question="Why use them?">
+    They help make code reusable, clean, and easy to understand.
+  </FAQItem>
+</FAQ>
+```

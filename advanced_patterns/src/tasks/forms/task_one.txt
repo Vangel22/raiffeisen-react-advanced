@@ -1,0 +1,55 @@
+Create a RegisterForm component with the following fields:
+
+Name (text)
+
+Email (email)
+
+Password (password)
+
+Confirm Password (password)
+
+Manage all input values using useState.
+
+Each input should update its corresponding state on change.
+
+Add a Submit button:
+
+When the form is submitted, prevent the default action.
+
+Display an alert with the form values in JSON format.
+
+Optional validation:
+
+Check if all fields are filled.
+
+Check if password and confirm password match.
+
+```tsx
+import { useState } from "react";
+
+export function RegisterForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Add validation (optional)
+    alert("Alert the data here");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* TODO: Add controlled input fields */}
+      <button type="submit">Register</button>
+    </form>
+  );
+}
+```
+
+Usage:
+
+```tsx
+<RegisterForm />
+```

@@ -1,0 +1,46 @@
+Create a component called RegisterFormHook.
+
+Add the same fields: Name, Email, Password, Confirm Password.
+
+Use react-hook-form’s register to manage input values.
+
+Add a Submit button that:
+
+Prevents the default form submission.
+
+Shows an alert with the form values.
+
+Optional validation:
+
+All fields required.
+
+Password must match confirm password.
+
+```tsx
+
+import { useForm } from "react-hook-form";
+
+interface FormData {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export function RegisterFormHook() {
+  const { register, handleSubmit } = useForm<FormData>();
+
+  const onSubmit = (data: FormData) => {
+    // TODO: Show alert with data
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {/* TODO: Add input fields using register */}
+      <button type="submit">Register</button>
+    </form>
+  );
+}
+
+
+```

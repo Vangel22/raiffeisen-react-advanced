@@ -1,0 +1,42 @@
+Create a component called RegisterFormUncontrolled.
+
+Add the same fields as in Task 1.
+
+Use useRef to get the value of each input instead of state.
+
+Add a Submit button that:
+
+Prevents the default form submission.
+
+Shows an alert with the input values in JSON format.
+
+Optional validation:
+
+Make sure all fields are filled.
+
+Check that password and confirm password match.
+
+```tsx
+import { useRef } from "react";
+
+export function RegisterFormUncontrolled() {
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const confirmPasswordRef = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Read values from refs and show alert
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* TODO: Add input fields with refs */}
+      <button type="submit">Register</button>
+    </form>
+  );
+}
+
+
+```

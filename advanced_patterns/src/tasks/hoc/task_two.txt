@@ -1,0 +1,30 @@
+TASK: Create a Higher-Order Component (HOC)
+
+Objective:
+Learn how to create a Higher-Order Component (HOC) that enhances a component’s appearance without modifying its internal logic.
+
+Instructions:
+
+1. Create a HOC called `withBorder` (or `withShadow`).
+   - The HOC should take a component and return a new component.
+   - It should add a **visual enhancement** (border or shadow) around the wrapped component.
+   - The HOC should accept optional parameters such as color, thickness, or shadow size.
+
+2. Implement a simple component to test your HOC:
+   - Example component: `Message` that displays a text string.
+   - Wrap the `Message` component using your HOC.
+   - Render multiple wrapped components to demonstrate that the HOC works with different props and styles.
+
+3. Requirements:
+   - Do not modify the original component’s code.
+   - Ensure that all props are passed correctly from the HOC to the wrapped component.
+   - Make it reusable so it can wrap any component, not just `Message`.
+
+Example Usage:
+
+const BorderedMessage = withBorder(Message, "green", "3px");
+<BorderedMessage text="Hello, this message has a border!" />
+
+Deliverables:
+- HOC file: `withBorder.ts` (or `withShadow.ts`)
+- Test component file: `MessageExample.ts` demonstrating the HOC usage
