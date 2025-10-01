@@ -1,4 +1,5 @@
 import "./App.css";
+import { AccordionExample } from "./components/AccordionExample";
 import { MouseTrackerExample } from "./components/MouseTracker";
 import { ExampleOne } from "./examples/ExampleOne";
 import { ExampleThree } from "./examples/ExampleThree";
@@ -17,7 +18,10 @@ function App() {
       {/* <ExampleThree /> */}
 
       {/* Render Prop Example */}
-      <MouseTrackerExample />
+      {/* <MouseTrackerExample /> */}
+
+      {/* Compound Component Example */}
+      <AccordionExample />
     </>
   );
 }
