@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-// Controlled Form - using useState
+// Uncontrolled Form - using useRef
 
 export const ExampleTwo = () => {
   const emailRef = useRef<HTMLInputElement>(null);
