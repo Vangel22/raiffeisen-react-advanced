@@ -1,4 +1,5 @@
 import "./App.css";
+import { MouseTrackerExample } from "./components/MouseTracker";
 import { ExampleOne } from "./examples/ExampleOne";
 import { ExampleThree } from "./examples/ExampleThree";
 import { ExampleTwo } from "./examples/ExampleTwo";
@@ -13,7 +14,10 @@ function App() {
         email="john.doe@example.com"
         isLoading={true}
       /> */}
-      <ExampleThree />
+      {/* <ExampleThree /> */}
+
+      {/* Render Prop Example */}
+      <MouseTrackerExample />
     </>
   );
 }
