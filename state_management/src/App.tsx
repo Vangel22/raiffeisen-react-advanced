@@ -1,26 +1,19 @@
+import { Counter } from "./components/Counter";
+import { CounterZustand } from "./components/CounterZustand";
 import "./App.css";
-import { useCounterStore } from "./state/counter/couterStore";
 
 function App() {
-  const { value, increment, decrement, reset, incrementWithAmountAsync } =
-    useCounterStore();
   return (
-    <>
-      <h1>State Management</h1>
-
-      <h1>Redux</h1>
-      {/* <p>Count: {count}</p> */}
-      {/* <Counter /> */}
-
-      <h1>Zustand</h1>
-      <p>Count: {value}</p>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={reset}>Reset</button>
-      <button onClick={() => incrementWithAmountAsync(50)}>
-        Increment by amount
-      </button>
-    </>
+    <div style={{ display: "flex", gap: "50px", padding: "20px" }}>
+      <div>
+        <h2>Redux Toolkit</h2>
+        <Counter />
+      </div>
+      <div>
+        <h2>Zustand</h2>
+        <CounterZustand />
+      </div>
+    </div>
   );
 }
 
