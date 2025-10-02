@@ -2,7 +2,8 @@
 import { redirect } from "next/navigation";
 
 const useAuth = () => {
-  return localStorage.getItem("token") ? true : false;
+  //localStorage.getItem("token") ? true :
+  return false;
 };
 
 export default function Profile() {
