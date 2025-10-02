@@ -1,0 +1,9 @@
+ISR (Incremental Static Regeneration)
+
+Create app/isr/page.tsx
+
+Use revalidate option with getStaticProps or fetch in Next.js 13 App Router
+
+Page is rebuilt every X seconds
+
+Display characters

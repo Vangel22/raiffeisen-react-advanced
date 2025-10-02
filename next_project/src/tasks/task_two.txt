@@ -1,0 +1,9 @@
+SSR (Server Side Rendering)
+
+Create app/ssr/page.tsx
+
+Fetch Rick & Morty API on server using getServerSideProps (or server component fetch)
+
+Example API: https://rickandmortyapi.com/api/character
+
+Display first 5 characters

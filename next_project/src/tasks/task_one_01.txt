@@ -1,0 +1,9 @@
+Dynamic Route
+
+Create a file: app/library/[bookId]/page.tsx
+
+Use useParams() to get bookId from URL
+
+Display: "Book Page: {bookId}"
+
+Test: Visit /library/42 → should show "Book Page: 42"

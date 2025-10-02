@@ -1,0 +1,11 @@
+SSG (Static Site Generation)
+
+Create app/ssg/page.tsx
+
+Use getStaticProps or fetch in a static server component
+
+Fetch Rick & Morty API
+
+Display characters
+
+Pre-build page at build time

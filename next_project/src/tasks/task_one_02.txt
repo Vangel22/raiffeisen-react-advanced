@@ -1,0 +1,35 @@
+2️⃣ Nested Route
+
+Create a file: app/library/collections/page.tsx
+
+Display: "Library Collections Page"
+
+Test: Visit /library/collections
+
+3️⃣ Protected Route
+
+Create a file: app/admin/page.tsx
+
+Simulate auth with a boolean: isAuthenticated = false
+
+If not authenticated, redirect to /login using redirect()
+
+Display "Your Profile" if authenticated
+
+Test: Visit /admin → should redirect to /login
+
+4️⃣ Programmatic Navigation
+
+In sign in page (app/signin/page.tsx):
+
+Create a simple form with email/password
+
+On submit, fake sign in and redirect to /library/collections using router.push("/library/collections")
+
+Use "use client" and useRouter() for navigation
+
+Optional Bonus
+
+Wrap library pages with app/library/layout.tsx
+
+Add header/sidebar that stays across nested pages
