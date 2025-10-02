@@ -1,0 +1,20 @@
+Use useQuery for 3 components from "https://countries.trevorblades.com/"
+
+Countries.tsx
+1. Continents access - explore the link above
+2. Display the continents with correct data using useQuery
+
+Languages.tsx
+1. Languages access - explore the link above
+2. Display the langauges with correct data using useQuery
+
+Implement any model of your choosing from Space X GraphQL api:
+
+https://studio.apollographql.com/public/SpaceX-pxxbxen/variant/current/explorer
+
+and display it in SpaceXApp.tsx with the data from the chosen model
+
+then add another one from https://rickandmortyapi.com/graphql
+
+Add any model of your choosing and create RickAndMorty.tsx with the data from the chosen model
+

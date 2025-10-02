@@ -1,0 +1,8 @@
+Task 2:
+
+Create mutation for Languages:
+
+1. Create AddLanguagesForm
+2. Follow the form AddCountryForm
+3. Use the correct fields for Languages model in the mutation
+4. Submit the form and display the message
