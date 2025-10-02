@@ -2,10 +2,15 @@ SSG (Static Site Generation)
 
 Create app/ssg/page.tsx
 
-Use getStaticProps or fetch in a static server component
+Use getStaticProps or fetch in a static server component or just follow my example
 
 Fetch Rick & Morty API
 
 Display characters
 
 Pre-build page at build time
+
+To test - run the application in production:
+
+npm run build
+npm run start 

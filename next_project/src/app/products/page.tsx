@@ -8,7 +8,7 @@ export default async function Products() {
   return (
     <div>
       <h1>Products</h1>
-      {products.map((product) => (
+      {products.map((product: any) => (
         <div
           style={{
             border: "1px solid red",
