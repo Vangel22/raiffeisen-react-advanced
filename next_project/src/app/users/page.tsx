@@ -1,5 +1,5 @@
-const getServerData = async () => {
-  return fetch("https://dummyjson.com/users")
+const getServerData = () => {
+  return fetch("https://rickandmortyapi.com/api/character")
     .then((res) => res.json())
     .then((data) => data);
 };
