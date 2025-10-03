@@ -6,7 +6,7 @@ describe("Login Component", () => {
   it("submits login and shows alert", () => {
     // Stub window.alert
     cy.window().then((win) => {
-      cy.stub(win, "stub").as("alertStub");
+      cy.stub(win, "alert").as("alertStub");
     });
 
     // Type email and password
