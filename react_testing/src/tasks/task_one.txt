@@ -1,0 +1,54 @@
+---
+
+##  Part 1 – Create a Loan Function
+
+* Create a function:
+
+```ts
+function calculateLoan(amount, percentage) {}
+```
+
+* The function should:
+
+  * Return the interest amount (`amount * percentage / 100`).
+  * Throw an error if:
+
+    * The input is not a number (e.g. text).
+    * The input is negative.
+
+---
+
+## Part 2 – Unit Tests with Vitest
+
+* Write a test suite for `calculateLoan`.
+* Test at least these cases:
+
+  1. Valid calculation (e.g. `1000` and `40` → `400`).
+  2. Different percentages (e.g. `500` and `20` → `100`).
+  3. Invalid input (e.g. `"abc"` → should throw an error).
+  4. Negative input (e.g. `-100` → should throw an error).
+
+---
+
+## Part 3 – LoanCalculator Component
+
+* Create a React component `LoanCalculator.tsx`.
+* It should:
+
+  * Have an input for **amount**.
+  * Have an input for **percentage**.
+  * A button **Calculate**.
+  * Show the calculated interest below the button.
+  * Show a validation error message if the input is invalid (text or negative numbers).
+
+---
+
+## Part 4 – Component Tests with RTL
+
+* Write tests that cover:
+
+  1. User enters amount and percentage → clicks calculate → result is shown.
+  2. User enters text instead of number → error message is shown.
+  3. User enters negative number → error message is shown.
+
+---

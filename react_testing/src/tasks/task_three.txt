@@ -1,0 +1,41 @@
+Write a Cypress E2E test that:
+
+Visits your app. -> cy.visit("your app localhost");
+
+Types "Buy milk" into the input.  cy.get('input[placeholder="Enter todo"]').type("Your text here");
+
+Clicks "Add". -> cy.contains("Add").click();
+
+
+Verifies "Buy milk" appears in the list. -> cy.contains("Your text here").should("exist");
+
+(Optional bonus) Add a "Clear" button and test that the list is cleared. cy.contains("Clear").click();
+
+
+Fill the needed functionality for the TodoApp.tsx
+
+import { useState } from "react";
+
+export const TodoApp = () => {
+  const [todos, setTodos] = useState<string[]>([]);
+  const [input, setInput] = useState("");
+
+  const handleAdd = () => {};
+
+  const handleClear = () => {}
+
+  return (
+    <div>
+      <h2>Todo App</h2>
+      <input type="text" placeholder="Enter todo" />
+      <button>Add</button>
+      <button>Clear</button>
+
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>{todo}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};

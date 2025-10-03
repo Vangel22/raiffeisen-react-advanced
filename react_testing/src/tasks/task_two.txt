@@ -1,0 +1,39 @@
+---
+
+## Part 1 – Create a Fetch Function
+
+* Create a function:
+
+```ts
+async function fetchCharacters() {}
+```
+
+* This function should:
+
+  * Fetch data from the **Rick and Morty API**:
+    `https://rickandmortyapi.com/api/character`
+  * Return a list of characters (only `id`, `name`, and `status`).
+
+---
+
+## Part 2 – CharacterList Component
+
+* Create a React component `CharacterList.tsx`.
+* It should:
+
+  * Show a **loading state** while fetching.
+  * Display a list of characters after fetching.
+  * Show an **error message** if the API call fails.
+
+---
+
+## Part 3 – Integration Tests with Vitest + RTL
+
+Write tests for `CharacterList`:
+
+1. Should render a **loading indicator** before data appears.
+2. Should display a **list of characters** after successful fetch.
+3. Should display an **error message** if the API fails.
+4. Use **mocking** for the API call instead of hitting the real API during tests.
+
+---
